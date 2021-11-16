@@ -13,7 +13,7 @@ score = 0
 playerid = 0
 playerimg = pygame.image.load("data/image/players/player"+str(playerid)+".png")
 playerx = 0
-travel_ver = "1.0.0"
+travel_ver = "1.0.1"
 win_sound = pygame.mixer.Sound("data/sound/victory.wav")
 play = 0
 play_time = 0
@@ -56,9 +56,15 @@ def win():
 
 def save():
     #os.system("cls")
-    print("\n맵 데이터를 저장했습니다!")
-    print(data_list)
-    pickle.dump(data_list,open("data/data/data.unliar","wb"))
+    try:
+        os.makedirs("data/data")
+        print("\n맵 데이터를 저장했습니다!")
+        print(data_list)
+        pickle.dump(data_list,open("data/data/data.unliar","wb"))
+    except:
+        pickle.dump(data_list,open("data/data/data.unliar","wb"))
+        print("\n맵 데이터를 저장했습니다!")
+        print(data_list)
   
     #데이터 로드
 
@@ -156,8 +162,8 @@ while run:
                         draw_image(trophy50,138, 0)
                     if play >= 100:
                         draw_image(trophy100,207,0)
-                        text("100 times...", 0,75, 30,color=BLACK)
-                    text("Game clear count: "+str(play), 0,125,30)
+                        text("100...", 0,75, 30,color=BLACK)
+                    text("게임 클리어: "+str(play), 0,125,30)
                     pygame.display.update()
 
     screen.fill(IVORY)
