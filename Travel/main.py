@@ -70,12 +70,11 @@ def save():
 
 try:
     data_load = pickle.load(open("data/data/data.unliar","rb"))
-    print(data_load[0] + ' 데이터를 불러옴.")
-    playerx = data_load[1]
-    playerid = data_load[2]
-    play_time = data_load[3]
-    play = data_load[4]
-    score = data_load[5]
+    playerx = data_load[0]
+    playerid = data_load[1]
+    play_time = data_load[2]
+    play = data_load[3]
+    score = data_load[4]
     #player img load
     playerimg = pygame.image.load("data/image/players/player"+str(playerid)+".png")
 except EOFError:
@@ -90,7 +89,6 @@ while run:
     for event in pygame.event.get():
 
         if event.type == pygame.QUIT:
-            data_list.append('Travel')
             data_list.append(playerx)
             data_list.append(playerid)
             data_list.append(play_time)
