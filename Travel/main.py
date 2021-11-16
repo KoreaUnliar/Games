@@ -13,7 +13,7 @@ score = 0
 playerid = 0
 playerimg = pygame.image.load("data/image/players/player"+str(playerid)+".png")
 playerx = 0
-travel_ver = "1.0.1"
+travel_ver = "1.0.2"
 win_sound = pygame.mixer.Sound("data/sound/victory.wav")
 play = 0
 play_time = 0
@@ -78,19 +78,9 @@ try:
     #player img load
     playerimg = pygame.image.load("data/image/players/player"+str(playerid)+".png")
 except EOFError:
-    data_list.append(playerx)
-    data_list.append(playerid)
-    data_list.append(play_time)
-    data_list.append(play)
-    data_list.append(score)
     save()
     print("데이터를 리셋했습니다!")
 except FileNotFoundError:
-    data_list.append(playerx)
-    data_list.append(playerid)
-    data_list.append(play_time)
-    data_list.append(play)
-    data_list.append(score)
     save() 
     print("데이터를 생성했습니다.")
 
