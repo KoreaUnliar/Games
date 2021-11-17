@@ -153,7 +153,7 @@ while run:
                     if play >= 100:
                         draw_image(trophy100,207,0)
                         text("100...", 0,75, 30,color=BLACK)
-                    text("게임 클리어: "+str(play), 0,125,30)
+                    text("Game Clear: "+str(play), 0,125,30)
                     pygame.display.update()
 
     screen.fill(IVORY)
